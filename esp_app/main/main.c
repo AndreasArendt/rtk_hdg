@@ -36,7 +36,7 @@ void app_main(void)
             //printf("Received %d bytes: ", len);
             for (int i = 0; i < len; i++)
             {
-                //printf("%02X ", data[i]);
+                // printf("%02X ", data[i]);
 
                 e_ubx_msg_type_t msg_type = ubx_parse(data[i], &ubx_msg);
 
@@ -44,7 +44,6 @@ void app_main(void)
                 {
                     printf("numSV: %d, fixType %d\n", ubx_msg.msg_nav_pvt.numSV, ubx_msg.msg_nav_pvt.fixType);
                 }
-
             }
             printf("\n");
         }

@@ -9,9 +9,10 @@ typedef struct
 {
     uint8_t msg_class;
     uint8_t msg_id;
-    uint8_t msg_length;
+    uint16_t msg_length;
 } e_ubx_header;
 
+#pragma pack(push, 1)
 typedef struct
 {
     uint32_t iTOW;    /**< GPS time of week of the
@@ -70,6 +71,7 @@ typedef struct
                            declination in degrees times 100; only
                            supported on ADR 4.10 and later. */
 } s_ubx_msg_nav_pvt_t;
+#pragma pack(pop)
 
 typedef union
 {
