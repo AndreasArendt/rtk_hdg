@@ -32,20 +32,16 @@ void app_main(void)
     {
         int len = uart_read_bytes(UART_PORT_NUM, data, BUF_SIZE, pdMS_TO_TICKS(100));
         if (len > 0)
-        {
-            //printf("Received %d bytes: ", len);
+        {            
             for (int i = 0; i < len; i++)
-            {
-                // printf("%02X ", data[i]);
-
+            { 
                 e_ubx_msg_type_t msg_type = ubx_parse(data[i], &ubx_msg);
 
                 if(msg_type == MSG_TYPE_NAV_PVT)
                 {
                     printf("numSV: %d, fixType %d\n", ubx_msg.msg_nav_pvt.numSV, ubx_msg.msg_nav_pvt.fixType);
                 }
-            }
-            printf("\n");
+            }            
         }
     }
 }
