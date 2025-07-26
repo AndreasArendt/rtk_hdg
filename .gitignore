@@ -1,0 +1,49 @@
+# ESP-IDF build artifacts
+/build/
+sdkconfig.old
+sdkconfig.defaults
+*.bin
+*.elf
+*.map
+
+# Auto-generated project description
+project_description.json
+
+# ESP-IDF Python environment
+.python_env/
+venv/
+env/
+*.pyc
+__pycache__/
+
+# CMake and Ninja artifacts
+CMakeCache.txt
+CMakeFiles/
+cmake-build-*
+Makefile
+cmake_install.cmake
+
+# VSCode workspace settings and local logs
+.vscode/
+*.code-workspace
+*.log
+
+# ESP-IDF extension stuff
+*.launch.json
+*.tasks.json
+*.ide_target
+*.pydevproject
+
+# Crash dumps / monitor artifacts
+*.core
+*.trace
+*.pcap
+monitor_output.log
+monitor.log
+
+# Misc
+*.orig
+*.bak
+.DS_Store
+Thumbs.db
+
