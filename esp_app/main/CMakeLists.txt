@@ -1,2 +1,2 @@
-idf_component_register(SRCS "ubx_parse.c" "main.c"
+idf_component_register(SRCS "uart.c" "wifi.c" "ubx_parse.c" "main.c"
                     INCLUDE_DIRS ".")
