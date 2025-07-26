@@ -73,11 +73,38 @@ typedef struct
 } s_ubx_msg_nav_pvt_t;
 #pragma pack(pop)
 
+#pragma pack(push, 1)
+typedef struct
+{
+    uint8_t version;
+    uint8_t reserved0;
+    uint16_t refStationId;
+    uint32_t iTOW;
+    int32_t relPosN;
+    int32_t relPosE;
+    int32_t relPosD;
+    int32_t relPosLength;
+    int32_t relPosHeading;
+    uint8_t reserved1[4];
+    int8_t resPosHPN;
+    int8_t relPosHPE;
+    int8_t relPosHPD;
+    int8_t relPosHPLength;
+    uint32_t accN;
+    uint32_t accE;
+    uint32_t accD;
+    uint32_t accLength;
+    uint32_t accHeading;
+    uint8_t reserved2[4];
+    uint32_t flags;
+} s_ubx_msg_nav_relposned_t;
+#pragma pack(pop)
+
 typedef union
 {
     s_ubx_msg_nav_pvt_t msg_nav_pvt;
+    s_ubx_msg_nav_relposned_t msg_nav_relposned;
     uint8_t raw_data[UBX_RAW_DATA_BUFFER];
 } u_ubx_msg_t;
-
 
 #endif

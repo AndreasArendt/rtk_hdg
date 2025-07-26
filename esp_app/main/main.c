@@ -25,8 +25,24 @@ void app_main(void)
 
                 if (msg_type == MSG_TYPE_NAV_PVT)
                 {
-                    char msg[64];
-                    snprintf(msg, sizeof(msg), "SVs: %d, Fix: %d\n", ubx_msg.msg_nav_pvt.numSV, ubx_msg.msg_nav_pvt.fixType);
+                    char msg[128];
+                    snprintf(msg, sizeof(msg), "SVs: %d, Fix: %d, Lat: %.2f, Lon: %.2f, Alt %.2f\n",
+                             ubx_msg.msg_nav_pvt.numSV,
+                             ubx_msg.msg_nav_pvt.fixType,
+                             ubx_msg.msg_nav_pvt.lat * 1.0e-7,
+                             ubx_msg.msg_nav_pvt.lon * 1.0e-7,
+                             ubx_msg.msg_nav_pvt.hMSL * 1.0e-3);
+                    wifi_send(&msg[0]);
+                }
+                else if (msg_type == MSG_TYPE_NAV_RELPOSNED)
+                {
+                    char msg[128];
+                    snprintf(msg, sizeof(msg), "relposN: %.2ld, relposE: %.2ld, relposD: %.2ld, heading %.2f, flags %ld\n",
+                             ubx_msg.msg_nav_relposned.relPosN,
+                             ubx_msg.msg_nav_relposned.relPosE,
+                             ubx_msg.msg_nav_relposned.relPosD,
+                             ubx_msg.msg_nav_relposned.relPosHeading * 1.0e-5,
+                             ubx_msg.msg_nav_relposned.flags);
                     wifi_send(&msg[0]);
                 }
             }

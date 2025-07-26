@@ -3,11 +3,18 @@
 
 static e_ubx_msg_type_t mapping_message_type(e_ubx_header *header)
 {
+    // NAV_PVT
     if (header->msg_class == 0x01 && header->msg_id == 0x07)
     {
         return MSG_TYPE_NAV_PVT;
     }
 
+    // NAV_RELPOSNED
+    if (header->msg_class == 0x01 && header->msg_id == 0x3C)
+    {
+        return MSG_TYPE_NAV_RELPOSNED;
+    }
+    
     return MSG_TYPE_UNKNOWN;
 }
 

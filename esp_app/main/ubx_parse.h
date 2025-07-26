@@ -19,7 +19,8 @@ typedef enum
 typedef enum
 {
     MSG_TYPE_UNKNOWN = 0,
-    MSG_TYPE_NAV_PVT
+    MSG_TYPE_NAV_PVT,
+    MSG_TYPE_NAV_RELPOSNED
 } e_ubx_msg_type_t;
 
 e_ubx_msg_type_t ubx_parse(uint8_t byte, u_ubx_msg_t* ubx_msg);
