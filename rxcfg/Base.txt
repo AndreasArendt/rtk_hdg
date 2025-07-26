@@ -1,0 +1,12 @@
+# Config changes format version 1.0
+# created by u-center version 25.06 at 22:11:22 on Friday, 25 Jul 2025
+[del]
+[set]
+Flash CFG-MSGOUT-RTCM_3X_TYPE4072_1_UART2 0x1                  # write value 1  0x1               to item id 0x20910383
+Flash CFG-MSGOUT-RTCM_3X_TYPE1074_UART2 0x1                  # write value 1  0x1               to item id 0x20910360 i
+Flash CFG-MSGOUT-RTCM_3X_TYPE1084_UART2 0x1                  # write value 1  0x1               to item id 0x20910365 i
+Flash CFG-MSGOUT-RTCM_3X_TYPE1094_UART2 0x1                  # write value 1  0x1               to item id 0x2091036a i
+Flash CFG-MSGOUT-RTCM_3X_TYPE1124_UART2 0x1                  # write value 1  0x1               to item id 0x2091036f i
+Flash CFG-MSGOUT-RTCM_3X_TYPE1230_UART2 0x1                  # write value 1  0x1               to item id 0x20910305 i
+Flash CFG-UART1-BAUDRATE   0x9600               # write value 38400  0x9600        to item id 0x40520001 in layer 2
+Flash CFG-UART2-BAUDRATE   0x9600               # write value 38400  0x9600        to item id 0x40530001 in layer 2
