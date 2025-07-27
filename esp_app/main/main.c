@@ -37,10 +37,11 @@ void app_main(void)
                 else if (msg_type == MSG_TYPE_NAV_RELPOSNED)
                 {
                     char msg[128];
-                    snprintf(msg, sizeof(msg), "relposN: %.2ld, relposE: %.2ld, relposD: %.2ld, heading %.2f, flags %ld\n",
+                    snprintf(msg, sizeof(msg), "relposN: %ld, relposE: %ld, relposD: %ld, acc_hdg %ld, heading %.2f, flags %ld\n",
                              ubx_msg.msg_nav_relposned.relPosN,
                              ubx_msg.msg_nav_relposned.relPosE,
                              ubx_msg.msg_nav_relposned.relPosD,
+                             ubx_msg.msg_nav_relposned.accHeading,
                              ubx_msg.msg_nav_relposned.relPosHeading * 1.0e-5,
                              ubx_msg.msg_nav_relposned.flags);
                     wifi_send(&msg[0]);
