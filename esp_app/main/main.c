@@ -12,7 +12,7 @@ void app_main(void)
     uint8_t data[BUF_SIZE];
 
     init_uart();
-    init_wifi();
+    //init_wifi();
 
     while (1)
     {
@@ -32,7 +32,8 @@ void app_main(void)
                              ubx_msg.msg_nav_pvt.lat * 1.0e-7,
                              ubx_msg.msg_nav_pvt.lon * 1.0e-7,
                              ubx_msg.msg_nav_pvt.hMSL * 1.0e-3);
-                    wifi_send(&msg[0]);
+                    //wifi_send(&msg[0]);
+                    printf(&msg[0]);
                 }
                 else if (msg_type == MSG_TYPE_NAV_RELPOSNED)
                 {
@@ -44,7 +45,8 @@ void app_main(void)
                              ubx_msg.msg_nav_relposned.accHeading,
                              ubx_msg.msg_nav_relposned.relPosHeading * 1.0e-5,
                              ubx_msg.msg_nav_relposned.flags);
-                    wifi_send(&msg[0]);
+                    //wifi_send(&msg[0]);
+                    printf(&msg[0]);
                 }
             }
         }

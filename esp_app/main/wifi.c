@@ -87,8 +87,7 @@ static void wifi_init_sta(void)
 
 void wifi_send(char* msg)
 {   
-    send(sock, msg, strlen(msg), 0);
-    printf(msg);
+    send(sock, msg, strlen(msg), 0);    
 }
 
 void init_wifi()
