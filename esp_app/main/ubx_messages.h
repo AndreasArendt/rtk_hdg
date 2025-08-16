@@ -86,7 +86,7 @@ typedef struct
     int32_t relPosLength;
     int32_t relPosHeading;
     uint8_t reserved1[4];
-    int8_t resPosHPN;
+    int8_t relPosHPN;
     int8_t relPosHPE;
     int8_t relPosHPD;
     int8_t relPosHPLength;

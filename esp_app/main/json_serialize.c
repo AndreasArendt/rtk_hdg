@@ -20,7 +20,7 @@ cJSON* relposned_to_json(const s_ubx_msg_nav_relposned_t* msg)
         cJSON_AddItemToArray(res1, cJSON_CreateNumber(msg->reserved1[i]));
     cJSON_AddItemToObject(root, "reserved1", res1);
 
-    cJSON_AddNumberToObject(root, "resPosHPN", msg->resPosHPN);
+    cJSON_AddNumberToObject(root, "relPosHPN", msg->relPosHPN);
     cJSON_AddNumberToObject(root, "relPosHPE", msg->relPosHPE);
     cJSON_AddNumberToObject(root, "relPosHPD", msg->relPosHPD);
     cJSON_AddNumberToObject(root, "relPosHPLength", msg->relPosHPLength);
